@@ -12,7 +12,11 @@ pipeline {
         timestamps()
              }
     stages{
-    stage("create docker image") {
+        stage("clone progekt web")  {
+            steps {
+                sh 'git clone https://github.com/andreyanch/jenkins/blob/master/web.py'
+            }
+        stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
                   dir('.') {
